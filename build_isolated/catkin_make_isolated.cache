@@ -1,0 +1,2 @@
+KalmanFilter
+-G Unix Makefiles -DCATKIN_DEVEL_PREFIX=/home/li/test/cpp/ros_core/KalmanFilter/devel_isolated -DCMAKE_INSTALL_PREFIX=/home/li/test/cpp/ros_core/KalmanFilter/install_isolated

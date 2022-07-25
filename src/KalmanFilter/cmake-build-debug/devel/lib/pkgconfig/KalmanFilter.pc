@@ -1,0 +1,8 @@
+prefix=/home/li/test/cpp/ros_core/KalmanFilter/src/KalmanFilter/cmake-build-debug/devel
+
+Name: KalmanFilter
+Description: Description of KalmanFilter
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

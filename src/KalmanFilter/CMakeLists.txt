@@ -19,7 +19,7 @@ include_directories(
 )
 
 
-add_executable(${PROJECT_NAME}_node src/main.cc)
+add_executable(${PROJECT_NAME}_node src/main.cc src/kalman_filter.cpp)
 
 target_link_libraries(${PROJECT_NAME}_node
         ${catkin_LIBRARIES}

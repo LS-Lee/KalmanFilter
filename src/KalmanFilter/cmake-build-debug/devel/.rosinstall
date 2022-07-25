@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/li/test/cpp/ros_core/KalmanFilter/src/KalmanFilter/cmake-build-debug/devel/setup.sh

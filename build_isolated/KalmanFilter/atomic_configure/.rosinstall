@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/li/test/cpp/ros_core/KalmanFilter/devel_isolated/KalmanFilter/setup.sh
