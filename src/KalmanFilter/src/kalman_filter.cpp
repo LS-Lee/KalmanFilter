@@ -8,6 +8,16 @@ KalmanFilter::KalmanFilter() : is_init(false) {}
 
 KalmanFilter::~KalmanFilter() = default;
 
+
+Eigen::VectorXd KalmanFilter::getX() {
+    return x_;
+}
+
+void KalmanFilter::initSystem(Eigen::VectorXd &x_in) {
+    x_ = x_in;
+    is_init = true;
+}
+
 void KalmanFilter::setF(Eigen::MatrixXd F_in)  {
     F_ = std::move(F_in);
 }
@@ -36,4 +46,11 @@ void KalmanFilter::predictionUpdaete() {
 
 void KalmanFilter::measurementUpdate(const Eigen::VectorXd &z) {
     Eigen::VectorXd y = z - H_ * x_;
+    Eigen::MatrixXd S = H_ * P_ * H_.transpose() + R_;
+    Eigen::MatrixXd K = P_ * H_.transpose() * S.inverse();
+    x_ = x_ + (K * y);
+    size_t size = x_.size();
+    Eigen::MatrixXd I = Eigen::MatrixXd::Identity((int)size, (int)size);
+    P_ = (I - K * H_) * P_;
 }
+
